@@ -10,7 +10,7 @@
   "collectCoverage": true,
   "clearMocks": true,
   "preset": "ts-jest",
-  "paths": {
-    "@/*": ["src/*"]
+  "moduleNameMapper": {
+    "^@/(.*)$": "<rootDir>/src/$1"
   }
 }
