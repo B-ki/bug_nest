@@ -1,0 +1,16 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "testMatch": ["<rootDir>/src/**/*spec.ts"],
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "collectCoverage": true,
+  "clearMocks": true,
+  "preset": "ts-jest",
+  "paths": {
+    "@/*": ["src/*"]
+  }
+}
