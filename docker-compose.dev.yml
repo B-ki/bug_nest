@@ -18,6 +18,22 @@ services:
     ports:
       - ${POSTGRES_PORT}:${POSTGRES_PORT}
 
+  front:
+    image: ft-transcendance-front-dev:latest
+    build:
+      context: ./front
+      dockerfile: Dockerfile.dev
+    container_name: front
+    restart: unless-stopped
+    volumes:
+      - ./front/package.json:/app/package.json
+      - ./front/pnpm-lock.yaml:/app/pnpm-lock.yaml
+      - ./front/src:/app/src
+    networks:
+      - network
+    ports:
+      - 8080:8080
+  
 volumes:
   db_data:
 

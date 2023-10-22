@@ -3,12 +3,11 @@ FROM node:18
 RUN npm i -g pnpm
 ENV PNPM_HOME=/pnpm
 
-ENV NODE_ENV development
-
 WORKDIR /app
 COPY ./package.json ./pnpm-lock.yaml ./
 RUN pnpm install
 
 COPY ./ ./
 
-CMD [ "/bin/bash", "-c", "pnpm prisma migrate dev && pnpm run dev" ]
+CMD [ "pnpm", "run", "dev" ]
+
